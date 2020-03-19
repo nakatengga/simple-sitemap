@@ -1,0 +1,21 @@
+{
+    "name": "nakatengga/simple-sitemap",
+    "license": "MIT",
+    "description": "Simple sitemap maker",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dmitriy Tsaralunga",
+            "email": "dmitriytsaralunga@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-simplexml": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nakatengga\\SimpleSitemap\\": "src/"
+        }
+    }
+}
