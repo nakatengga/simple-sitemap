@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Nakatengga\SimpleSitemap;
 
@@ -29,7 +30,7 @@ class Sitemap
      */
     public function add(string $url)
     {
-
+        $this->urls[] = $url;
     }
 
     /**
@@ -40,10 +41,12 @@ class Sitemap
         /** @var SimpleXMLElement $sitemap */
         $sitemap = $this->getXmlTemplate();
 
-        foreach ($this->urls as $url) {
-            $sitemap->urlset->
+        foreach ($this->urls as $loc) {
+            $url = $sitemap->addChild('url');
+            $url->addChild('loc', $loc);
         }
 
+        return $sitemap->asXML();
     }
 
     /**
